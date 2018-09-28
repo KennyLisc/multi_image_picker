@@ -60,7 +60,7 @@ public class SwiftMultiImagePickerPlugin: NSObject, FlutterPlugin {
 
             if let selectionTextColor = options["selectionTextColor"] {
                 if (!selectionTextColor.isEmpty) {
-                    vc.selectionTextAttributes[NSAttributedStringKey.foregroundColor] = hexStringToUIColor(hex: selectionTextColor)
+                    vc.selectionTextAttributes[NSAttributedString.Key.foregroundColor] = hexStringToUIColor(hex: selectionTextColor)
                 }
             }
 
