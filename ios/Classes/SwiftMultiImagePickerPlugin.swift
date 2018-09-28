@@ -114,7 +114,7 @@ public class SwiftMultiImagePickerPlugin: NSObject, FlutterPlugin {
                     options: options,
                     resultHandler: {
                         (image: UIImage?, info) in
-                        self.messenger.send(onChannel: "multi_image_picker/image/" + identifier, message: UIImageJPEGRepresentation(image!, 1.0))
+                        self.messenger.send(onChannel: "multi_image_picker/image/" + identifier, message: image?.jpegData(1.0))
                         })
                 
                 if(PHInvalidImageRequestID != ID) {
@@ -143,7 +143,7 @@ public class SwiftMultiImagePickerPlugin: NSObject, FlutterPlugin {
                     options: options,
                     resultHandler: {
                         (image: UIImage?, info) in
-                        self.messenger.send(onChannel: "multi_image_picker/image/" + identifier, message: UIImageJPEGRepresentation(image!, 1.0))
+                        self.messenger.send(onChannel: "multi_image_picker/image/" + identifier, message: image?.jpegData(1.0))
                 })
                 
                 if(PHInvalidImageRequestID != ID) {
